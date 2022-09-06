@@ -1,0 +1,81 @@
+body {
+    display: flex;
+    box-sizing: border-box;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: #6b686d;
+}
+
+button {
+    padding: 20px;
+    border-radius: 30px;
+}
+
+
+.changement {
+    border: "1px solid black";
+    width: 200px;
+    padding: 20px;
+    color: #555;
+    text-align: center;
+    font-size: 30px;
+    background: #cc9900;
+    border-radius: 30px;
+}
+
+.grille {
+    background: rgb(195, 195, 195);
+    display: grid;
+    grid-template: repeat(3, 200px) / repeat(4, 200px);
+    width: 800px;
+    height: 600px;
+    margin: 100px auto 0;
+}
+
+.carte {
+    background-color: transparent;
+    perspective: 1000px;
+    margin: 5px;
+}
+
+.double-face {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.5s;
+    transform-style: preserve-3d;
+}
+
+.face,
+.arriere {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+}
+
+.face {
+    background: white;
+    transform: rotateY(180deg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.face img {
+    width: 120px;
+}
+
+.arriere {
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 80px
+}
+
+
+.active {
+    transform: rotateY(180deg);
+}
